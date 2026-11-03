@@ -2163,6 +2163,17 @@
                                     "description": "Create a dedicated metrics service to use with ServiceMonitor",
                                     "type": "boolean"
                                 },
+                                "ipFamilies": {
+                                    "description": "IP families of the dedicated metrics service, e.g. [\"IPv4\", \"IPv6\"].",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "ipFamilyPolicy": {
+                                    "description": "IP family policy of the dedicated metrics service (SingleStack, PreferDualStack, RequireDualStack).",
+                                    "type": "string"
+                                },
                                 "labels": {
                                     "type": "object"
                                 }

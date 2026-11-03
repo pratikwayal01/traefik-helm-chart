@@ -53,3 +53,22 @@ tests:
             name: metrics
             targetPort: metrics
             protocol: TCP
+  - it: should configure the IP family of the dedicated metrics service
+    set:
+      metrics:
+        prometheus:
+          service:
+            enabled: true
+            ipFamilyPolicy: PreferDualStack
+            ipFamilies:
+              - IPv4
+              - IPv6
+    asserts:
+      - equal:
+          path: spec.ipFamilyPolicy
+          value: PreferDualStack
+      - equal:
+          path: spec.ipFamilies
+          value:
+            - IPv4
+            - IPv6

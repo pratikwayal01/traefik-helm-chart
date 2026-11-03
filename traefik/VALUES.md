@@ -377,6 +377,8 @@ Kubernetes: `>=1.30.0-0`
 | metrics.prometheus.prometheusRule.namespace | string | `""` |  |
 | metrics.prometheus.service.annotations | object | `{}` |  |
 | metrics.prometheus.service.enabled | bool | `false` | Create a dedicated metrics service to use with ServiceMonitor |
+| metrics.prometheus.service.ipFamilies | list | `[]` | IP families of the dedicated metrics service, e.g. ["IPv4", "IPv6"]. |
+| metrics.prometheus.service.ipFamilyPolicy | string | `""` | IP family policy of the dedicated metrics service (SingleStack, PreferDualStack, RequireDualStack). |
 | metrics.prometheus.service.labels | object | `{}` |  |
 | metrics.prometheus.serviceMonitor.additionalLabels | object | `{}` |  |
 | metrics.prometheus.serviceMonitor.apiVersion | string | `"monitoring.coreos.com/v1"` |  |
